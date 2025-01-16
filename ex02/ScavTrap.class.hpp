@@ -23,10 +23,13 @@ public:
     void attack (const std::string & target );
 	void guardGate();
 
+    // Helper functions for canonicalization
+    std::string canonizeme( void ) const ;
+
 
 private:
 
-    // Helper functions for canonicalization
+
 };
 
 std::ostream& operator<<(std::ostream& os, const ScavTrap& obj);

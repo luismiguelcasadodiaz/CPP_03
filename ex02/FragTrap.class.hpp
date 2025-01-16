@@ -1,9 +1,9 @@
 #ifndef FragTrap_H
 # define FragTrap_H
-
+#include "ClapTrap.class.hpp"
 #include <iostream>
 
-class FragTrap {
+class FragTrap : public ClapTrap {
 public:
     FragTrap( void ); //constructor by default
     FragTrap(const FragTrap& other); //constructor by copy
@@ -11,7 +11,7 @@ public:
     ~FragTrap( void ); // destructor
 
     // Constructor(s)
-    //FragTrap(${ARGS_LIST});
+    FragTrap( const std::string thename );
 
     // Getters
 
@@ -20,11 +20,13 @@ public:
     // Comparison operators
 
     // member functions
+    void highFivesGuys(void);
 
+    // Helper functions for canonicalization
+    std::string canonizeme( void ) const ;
 
 private:
 
-    // Helper functions for canonicalization
 };
 
 std::ostream& operator<<(std::ostream& os, const FragTrap& obj);

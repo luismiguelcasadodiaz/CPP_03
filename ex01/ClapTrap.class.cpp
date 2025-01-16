@@ -46,9 +46,32 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
 }
 	
 
-// Getters
-
-// Setters
+    // Getters
+    std::string ClapTrap::getName( void ) const{
+		return (this->_name);
+	}
+    int ClapTrap::getHit( void ) const{
+		return (this->_hit);
+	}
+    int ClapTrap::getEnergy( void ) const{
+		return (this->_energy);
+	}
+    int ClapTrap::getAttack( void ) const{
+		return (this->_attack);
+	}    
+    // Setters
+    void ClapTrap::setName(std::string const value){
+		this->_name = value;
+	}
+    void ClapTrap::setHit(int const value){
+		this->_hit = value;
+	}
+    void ClapTrap::setEnergy(int const value){
+		this->_energy = value;
+	}
+    void ClapTrap::setAttack(int const value){
+		this->_attack = value;
+	}     
 
 // Comparison operators
 
@@ -61,7 +84,7 @@ void ClapTrap::attack (const std::string & target ){
 			std::cout << "ClapTrap " << this->_name ;
 			std::cout << " attacks " << target ;
 			std::cout << ", causing " << this->_attack;
-			std::cout << " poinst of damage!" << std::endl;
+			std::cout << " points of damage!" << std::endl;
 		} else {
 			std::cout << " ClapTrap has not health to attack." << std::endl;
 		}
@@ -74,7 +97,7 @@ void ClapTrap::takeDamage ( unsigned int amount ){
 	std::cout << "ClapTrap " << this->_name ;
 	std::cout << " takes a damage of  " << amount ;
 	std::cout << " points. Current health level is  " << this->_hit;
-	std::cout << " poinst of damage!" << std::endl;
+	std::cout << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired ( unsigned int amount ){
@@ -100,8 +123,8 @@ std::string ClapTrap::canonizeme( void ) const {
 	std::string hit_txt = itoa(this->_hit);
 	std::string ene_txt = itoa(this->_energy);
 	std::string att_txt = itoa(this->_attack);
-	std::string _str_ = "ClapTrap " + this->_name + " hit ==>(" + hit_txt;
-	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")");
+	std::string _str_ = "ClapTrap " + this->_name + " [hit ==>(" + hit_txt;
+	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")]");
 }
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& obj)

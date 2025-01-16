@@ -100,8 +100,8 @@ std::string ClapTrap::canonizeme( void ) const {
 	std::string hit_txt = itoa(this->_hit);
 	std::string ene_txt = itoa(this->_energy);
 	std::string att_txt = itoa(this->_attack);
-	std::string _str_ = "ClapTrap " + this->_name + " hit ==>(" + hit_txt;
-	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")");
+	std::string _str_ = "ClapTrap " + this->_name + " [hit ==>(" + hit_txt;
+	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")]");
 }
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& obj)
