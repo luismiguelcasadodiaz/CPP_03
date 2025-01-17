@@ -1,39 +1,41 @@
 #include "ScavTrap.class.hpp"
 
-std::string itoa (int N );
+	std::string itoa (int N );
 
-ScavTrap::ScavTrap( void ):ClapTrap("ScavTrap") //constructor by default
-{
-	std::cout << "Default constructor called for ScavTrap " << std::endl;
-	setHit(100);
-	setEnergy(50);
-	setAttack(20);
-	return ;
-}
+	ScavTrap::ScavTrap( void ):ClapTrap() //constructor by default
+	{
+		std::cout << BLUE << "ScavTrap " << getName() << " default constructor called." << RESET << std::endl;
+		setHit(100);
+		setEnergy(50);
+		setAttack(20);
+		return ;
+	}
 
-ScavTrap::ScavTrap(const ScavTrap& other) //constructor by copy
-{
-	std::cout << "Copy constructor called for ScavTrap " << std::endl;
-	*this = other;
-	return;
-}
+	ScavTrap::ScavTrap(const ScavTrap& other):ClapTrap() //constructor by copy
+	{
+		std::cout << BLUE << "ScavTrap " << getName() << " copy constructor from "<< other.getName() <<" called." << RESET << std::endl;
+		setName(other.getName());
+		setHit(other.getHit());
+		setEnergy(other.getEnergy());
+		setAttack(other.getAttack());
+	}
 
-ScavTrap &  ScavTrap::operator=(const ScavTrap & other)
-{
-	std::cout << "Copy assignment operator called for ScavTrap " << std::endl;
-	if (this != &other)
+	ScavTrap &  ScavTrap::operator=(const ScavTrap & other)
+	{
+	std::cout <<  BLUE << "ScavTrap " << getName() << " copy assignment operator from "<< other.getName() <<" called." << RESET << std::endl;
+		if (this != &other)
 	{
 		this->setName(other.getName());
 		this->setHit(other.getHit());
 		this->setEnergy(other.getEnergy());
 		this->setAttack(other.getAttack());						
 	}
-return *this; 
+	return *this; 
 }
 
 ScavTrap::~ScavTrap( void ) // destructor
 {
-	std::cout << "Destructor called for ScavTrap " << std::endl;
+	std::cout <<  BLUE << "ScavTrap " << getName() << " Destructor called." << RESET << std::endl;
 	return ;
 }
 
@@ -43,7 +45,7 @@ ScavTrap::ScavTrap( const std::string thename):ClapTrap(thename) //constructor w
 	setHit(100);
 	setEnergy(50);
 	setAttack(20);
-	std::cout << "Parametric constructor called for ScavTrap " << std::endl;
+	std::cout <<  BLUE << "ScavTrap " << getName() << " parametric constructor called." << RESET << std::endl;
 }
 
 // Getters
@@ -54,61 +56,34 @@ ScavTrap::ScavTrap( const std::string thename):ClapTrap(thename) //constructor w
 
 // Canonicalization function
 
-std::string ScavTrap::canonizeme( void ) const {
-	std::string hit_txt = itoa(this->getHit());
-	std::string ene_txt = itoa(this->getEnergy());
-	std::string att_txt = itoa(this->getAttack());
-	std::string _str_ = "ScavTrap " + this->getName() + " hit ==>(" + hit_txt;
-	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")");
-}
-
 // member functions
 void ScavTrap::attack (const std::string & target ){
 	if (this->getEnergy() > 0){
 		if (this->getHit() > 0) {
 			this->setEnergy(this->getEnergy() - 1);
-			std::cout << "ScavTrap " << this->getName();
-			std::cout << " is willing to attack " << target ;
+			std::cout <<BLUE <<  "ScavTrap " << this->getName();
+			std::cout << " attacks " << target ;
 			std::cout << ", causing " << this->getAttack();
-			std::cout << " points of damage!" << std::endl;
+			std::cout << " points of damage!" << RESET << std::endl;
 		} else {
-			std::cout << " ScavTrap has not health to attack." << std::endl;
+			std::cout <<  BLUE << "ScavTrap " << getName() << " has not health to attack." << RESET << std::endl;
 		}
 	} else {
-		std::cout << "ScavTrap has no energy to attack." << std::endl;
+			std::cout <<  BLUE << "ScavTrap " << getName() << " has no energy to attack." << RESET << std::endl;
 	}
 }
 
 void ScavTrap::guardGate(){
-	std::cout << "ScavTrap is in gate keeper mode" << std::endl;
+	std::cout <<  BLUE << "ScavTrap " << getName() << " is in gate keeper mode" << RESET << std::endl;
 }
 
 // Helper functions for canonicalization
 
+
+
 std::ostream& operator<<(std::ostream& os, const ScavTrap& obj)
 {
-	os << obj.canonizeme() << std::endl;
+	os << BLUE << "ScavTrap " << obj.canonizeme() << RESET << std::endl;
 	return os;
 };
-/*
-std::string itoa (int N )
-{
-	std::string resultado;
-	char		num;
 
-	if (N == 0)
-		resultado.insert(0, 1, '0');
-	else if (N > 0)
-	{ 
-		if (N  > 9)
-		{
-			resultado = itoa(N / 10);
-			num = static_cast<char>(48 + N % 10);
-		}
-		num = static_cast<char>(48 + N % 10);
-		resultado.append(1,  num);
-	}
-	return (resultado);
-}
-
-*/

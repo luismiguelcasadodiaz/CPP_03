@@ -2,25 +2,25 @@
 
 std::string itoa (int N );
 
-FragTrap::FragTrap( void ):ClapTrap("FragTrap") //constructor by default
+FragTrap::FragTrap( void ):ClapTrap() //constructor by default
 {
-	std::cout << "Default constructor called for FragTrap " << std::endl;
+	std::cout << RED << "FragTrap " << getName() << " default constructor called." << RESET << std::endl;
 	setHit(100);
 	setEnergy(100);
 	setAttack(30);
-	return ;
 }
 
-FragTrap::FragTrap(const FragTrap& other) //constructor by copy
+FragTrap::FragTrap(const FragTrap& other):ClapTrap() //constructor by copy
 {
-	std::cout << "Copy constructor called for FragTrap " << std::endl;
-	*this = other;
-	return;
+	std::cout << RED << "FragTrap " << getName() << " copy constructor from "<< other.getName() <<" called." << RESET << std::endl;
+	setHit(other.getHit());
+	setEnergy(other.getEnergy());
+	setAttack(other.getAttack());
 }
 
 FragTrap &  FragTrap::operator=(const FragTrap & other)
 {
-	std::cout << "Copy assignment operator called for FragTrap " << std::endl;
+	std::cout <<  RED << "ScavTrap " << getName() << " copy assignment operator from "<< other.getName() <<" called." << RESET << std::endl;
 	if (this != &other)
 	{
 		this->setName(other.getName());
@@ -33,7 +33,7 @@ FragTrap &  FragTrap::operator=(const FragTrap & other)
 
 FragTrap::~FragTrap( void ) // destructor
 {
-	std::cout << "Destructor called for FragTrap " << std::endl;
+	std::cout <<  RED << "ScavTrap " << getName() << " Destructor called." << RESET << std::endl;
 	return ;
 }
 
@@ -43,8 +43,9 @@ FragTrap::FragTrap( const std::string thename):ClapTrap(thename) //constructor w
 	setHit(100);
 	setEnergy(100);
 	setAttack(30);
-	std::cout << "Parametric constructor called for FragClap " << std::endl;
+	std::cout <<  RED << "ScavTrap " << getName() << " parametric constructor called." << RESET << std::endl;
 }
+
 
 // Getters
 
@@ -54,22 +55,15 @@ FragTrap::FragTrap( const std::string thename):ClapTrap(thename) //constructor w
 
 // member function
 void FragTrap::highFivesGuys(void){
-	std::cout << "FragTrap Claims: Believe in yourself! High five!" << std::endl;
+	std::cout << RED << "FragTrap " << getName() << " Claims: Believe in yourself! High five!" << RESET << std::endl;
 }
 
 // Helper functions for canonicalization
 
-std::string FragTrap::canonizeme( void ) const {
-	std::string hit_txt = itoa(this->getHit());
-	std::string ene_txt = itoa(this->getEnergy());
-	std::string att_txt = itoa(this->getAttack());
-	std::string _str_ = "FragTrap " + this->getName() + " [hit ==>(" + hit_txt;
-	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")]");
-}
 
 std::ostream& operator<<(std::ostream& os, const FragTrap& obj)
 {
-	os << obj.canonizeme() << std::endl;
+	os << RED << "FragTrap " << obj.canonizeme() << RESET << std::endl;
 	return os;
 };
 /*

@@ -15,7 +15,13 @@ int main( void )
 {
 	ClapTrap a;
 	std::cout << a << std::endl;
-	a.attack("hola");
+	a.attack("Juan");
+	std::cout << a << std::endl;	
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	std::cout << a << std::endl;	
+	a.takeDamage(1);
 	std::cout << a << std::endl;	
 	a.takeDamage(1);
 	std::cout << a << std::endl;
@@ -25,6 +31,15 @@ int main( void )
 	std::cout << a << std::endl;	
 	a.takeDamage(1);
 	std::cout << a << std::endl;	
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	a.attack("Pepe");
+	std::cout << a << std::endl;					
 	a.beRepaired(321);
 	std::cout << a << std::endl;
 

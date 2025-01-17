@@ -22,11 +22,10 @@ public:
     // member functions
     void attack (const std::string & target );
 	void guardGate();
-
-
+    // Helper functions for canonicalization
 private:
 
-    // Helper functions for canonicalization
+
 };
 
 std::ostream& operator<<(std::ostream& os, const ScavTrap& obj);

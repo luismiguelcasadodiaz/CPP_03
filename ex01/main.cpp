@@ -14,9 +14,16 @@
 #include "ScavTrap.class.hpp"
 int main( void )
 {
-	ScavTrap a;
+	std::cout << "----Pruebas ClapTrap prints print different messages" << std::endl;
+	ClapTrap a;
 	std::cout << a << std::endl;
-	a.attack("hola");
+	a.attack("Juan");
+	std::cout << a << std::endl;	
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	std::cout << a << std::endl;	
+	a.takeDamage(1);
 	std::cout << a << std::endl;	
 	a.takeDamage(1);
 	std::cout << a << std::endl;
@@ -26,19 +33,39 @@ int main( void )
 	std::cout << a << std::endl;	
 	a.takeDamage(1);
 	std::cout << a << std::endl;	
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	std::cout << a << std::endl;
+	a.takeDamage(1);
+	a.attack("Pepe");
+	std::cout << a << std::endl;					
 	a.beRepaired(321);
 	std::cout << a << std::endl;
 
-	a = ScavTrap("DELL");
-	std::cout << a << std::endl;
-	a.guardGate();	
+	a = ClapTrap("DELL");
+	std::cout << a << std::endl;	
 
-	std::cout << "----Pruebas ClapTrap prints print different messages" << std::endl;
-	ClapTrap ct= ClapTrap("Luis");
+
+	std::cout << "----Pruebas ScavTrap prints print different messages" << std::endl;
+	ClapTrap ct= ClapTrap("Pepe");
 	std::cout << ct << std::endl;
-	ScavTrap dd= ScavTrap("Pedro");
-	std::cout << dd << std::endl;
+	ScavTrap st= ScavTrap("Luis");
+	std::cout << st << std::endl;
 	ct.attack("to one");
-	dd.attack("to two");
+	st.attack("to two");
+	std::cout << ct << std::endl;
+	std::cout << st << std::endl;
+	ct.takeDamage(1);
+	st.takeDamage(1);
+	std::cout << ct << std::endl;
+	std::cout << st << std::endl;
+	ct.beRepaired(1);
+	st.beRepaired(1);
+	std::cout << ct << std::endl;
+	std::cout << st << std::endl;
+	st.guardGate();
 	return (0);
 }

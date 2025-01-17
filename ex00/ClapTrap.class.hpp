@@ -1,8 +1,14 @@
 #ifndef ClapTrap_H
 # define ClapTrap_H
 
-#include <iostream>
-#include <string>
+# define RESET  	"\033[0;39m"
+# define GRAY		"\033[0;90m"
+# define RED		"\033[0;91m"
+# define GREEN		"\033[38;2;75;179;82m"
+# define YELLOW		"\033[0;93m"
+# define BLUE		"\033[0;94m"
+# include <iostream>
+# include <string>
 
 class ClapTrap {
 public:

@@ -23,7 +23,6 @@ public:
     void highFivesGuys(void);
 
     // Helper functions for canonicalization
-    std::string canonizeme( void ) const ;
 
 private:
 
