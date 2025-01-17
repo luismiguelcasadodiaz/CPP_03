@@ -49,7 +49,8 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
 	
 
     // Getters
-    std::string ClapTrap::getName( void ) const{
+    /*
+	std::string ClapTrap::getName( void ) const{
 		return (this->_name);
 	}
     int ClapTrap::getHit( void ) const{
@@ -60,8 +61,10 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
 	}
     int ClapTrap::getAttack( void ) const{
 		return (this->_attack);
-	}    
+	}
+	*/   
     // Setters
+	/*
     void ClapTrap::setName(std::string const value){
 		this->_name = value;
 	}
@@ -74,7 +77,7 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
     void ClapTrap::setAttack(int const value){
 		this->_attack = value;
 	}     
-
+	*/
 // Comparison operators
 
 // member functions
@@ -125,7 +128,7 @@ std::string ClapTrap::canonizeme( void ) const {
 	std::string hit_txt = itoa(this->_hit);
 	std::string ene_txt = itoa(this->_energy);
 	std::string att_txt = itoa(this->_attack);
-	std::string _str_ = this->_name + " [hit ==>(" + hit_txt;
+	std::string _str_ = this->_name + " [hit(" + hit_txt;
 	return (_str_  + ") energy(" + ene_txt + ") attack (" + att_txt + ")]");
 }
 
