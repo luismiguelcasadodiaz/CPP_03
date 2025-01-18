@@ -23,15 +23,15 @@ public:
     ClapTrap( const std::string thename );
 
     // Getters
-    std::string getName( void ) const;
+    /*std::string getName( void ) const;
     int getHit( void ) const;
     int getEnergy( void ) const;
-    int getAttack( void ) const;    
+    int getAttack( void ) const;    */
     // Setters
-    void setName(std::string const value);
+    /*void setName(std::string const value);
     void setHit(int const value);
     void setEnergy(int const value);
-    void setAttack(int const value);            
+    void setAttack(int const value); */           
 
     // Comparison operators
 
@@ -43,7 +43,7 @@ public:
     // Helper functions for canonicalization
 	std::string canonizeme( void ) const ;
 
-private:
+protected:
 	std::string	_name;
 	int	_hit;
 	int _energy;

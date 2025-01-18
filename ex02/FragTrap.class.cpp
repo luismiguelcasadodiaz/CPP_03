@@ -4,46 +4,47 @@ std::string itoa (int N );
 
 FragTrap::FragTrap( void ):ClapTrap() //constructor by default
 {
-	std::cout << RED << "FragTrap " << getName() << " default constructor called." << RESET << std::endl;
-	setHit(100);
-	setEnergy(100);
-	setAttack(30);
+	std::cout << RED << "FragTrap " << _name << " default constructor called." << RESET << std::endl;
+	_hit = 100;
+	_energy = 100;
+	_attack = 30;
 }
 
 FragTrap::FragTrap(const FragTrap& other):ClapTrap() //constructor by copy
 {
-	std::cout << RED << "FragTrap " << getName() << " copy constructor from "<< other.getName() <<" called." << RESET << std::endl;
-	setHit(other.getHit());
-	setEnergy(other.getEnergy());
-	setAttack(other.getAttack());
+	std::cout << RED << "FragTrap " << _name << " copy constructor from "<< other._name <<" called." << RESET << std::endl;
+	_name = other._name;
+	_hit = other._hit;
+	_energy = other._energy;
+	_attack = other._attack;
 }
 
 FragTrap &  FragTrap::operator=(const FragTrap & other)
 {
-	std::cout <<  RED << "ScavTrap " << getName() << " copy assignment operator from "<< other.getName() <<" called." << RESET << std::endl;
+	std::cout <<  RED << "ScavTrap " << _name << " copy assignment operator from "<< other._name <<" called." << RESET << std::endl;
 	if (this != &other)
 	{
-		this->setName(other.getName());
-		this->setHit(other.getHit());
-		this->setEnergy(other.getEnergy());
-		this->setAttack(other.getAttack());		
+	_name = other._name;
+	_hit = other._hit;
+	_energy = other._energy;
+	_attack = other._attack;		
 	}
 	return *this; 
 }
 
 FragTrap::~FragTrap( void ) // destructor
 {
-	std::cout <<  RED << "ScavTrap " << getName() << " Destructor called." << RESET << std::endl;
+	std::cout <<  RED << "ScavTrap " << _name << " Destructor called." << RESET << std::endl;
 	return ;
 }
 
 // Constructor(s)
 FragTrap::FragTrap( const std::string thename):ClapTrap(thename) //constructor with parameters
 {
-	setHit(100);
-	setEnergy(100);
-	setAttack(30);
-	std::cout <<  RED << "ScavTrap " << getName() << " parametric constructor called." << RESET << std::endl;
+	_hit = 100;
+	_energy = 100;
+	_attack = 30;
+	std::cout <<  RED << "ScavTrap " << _name << " parametric constructor called." << RESET << std::endl;
 }
 
 
@@ -55,7 +56,7 @@ FragTrap::FragTrap( const std::string thename):ClapTrap(thename) //constructor w
 
 // member function
 void FragTrap::highFivesGuys(void){
-	std::cout << RED << "FragTrap " << getName() << " Claims: Believe in yourself! High five!" << RESET << std::endl;
+	std::cout << RED << "FragTrap " << _name << " Claims: Believe in yourself! High five!" << RESET << std::endl;
 }
 
 // Helper functions for canonicalization

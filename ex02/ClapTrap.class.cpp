@@ -49,7 +49,7 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
 	
 
     // Getters
-    std::string ClapTrap::getName( void ) const{
+    /*std::string ClapTrap::getName( void ) const{
 		return (this->_name);
 	}
     int ClapTrap::getHit( void ) const{
@@ -74,7 +74,7 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
     void ClapTrap::setAttack(int const value){
 		this->_attack = value;
 	}     
-
+*/
 // Comparison operators
 
 // member functions
