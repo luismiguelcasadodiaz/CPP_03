@@ -23,8 +23,15 @@ public:
     ClapTrap( const std::string thename );
 
     // Getters
-
+    std::string getName( void ) const;
+    int getHit( void ) const;
+    int getEnergy( void ) const;
+    int getAttack( void ) const;    
     // Setters
+    void setName(std::string const value);
+    void setHit(int const value);
+    void setEnergy(int const value);
+    void setAttack(int const value);            
 
     // Comparison operators
 

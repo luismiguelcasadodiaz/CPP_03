@@ -6,7 +6,7 @@
 #    By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 13:07:33 by luicasad          #+#    #+#              #
-#    Updated: 2025/01/04 15:06:43 by luicasad         ###   ########.fr        #
+#    Updated: 2025/01/18 22:12:50 by luicasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ HEADERS		=	ClapTrap.class.hpp \
 SRCS_TARGET	= 	main.cpp \
 				ClapTrap.class.cpp \
 				ScavTrap.class.cpp \
-				FragTrap.class.cpp \		
+				FragTrap.class.cpp \
 				DiamondTrap.class.cpp
 
 
