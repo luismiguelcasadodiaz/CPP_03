@@ -56,7 +56,7 @@ HEADERS		=	ClapTrap.class.hpp \
 SRCS_TARGET	= 	main.cpp \
 				ClapTrap.class.cpp \
 				ScavTrap.class.cpp \
-				FragTrap.class.cpp \		
+				FragTrap.class.cpp \
 				DiamondTrap.class.cpp
 
 
