@@ -2,11 +2,15 @@
 
 
 
-DiamondTrap::DiamondTrap( void ) //constructor by default
+DiamondTrap::DiamondTrap( void ): //constructor by default
+	ClapTrap("Anonymous_Clap_name"),
+ 	FragTrap("Anonymous_Frag_name"), 
+	ScavTrap("Anonymous_Scav_name"),
+	_name("Anonymous")
 {
 	std::cout << YELLOW << "DiamTrap " << this->_name << " default constructor called." << RESET << std::endl;
 }
-}
+
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other) //constructor by copy
 {
@@ -32,7 +36,13 @@ DiamondTrap::~DiamondTrap( void ) // destructor
 }
 
 // Constructor(s)
-//DiamondTrap::DiamondTrap(${ARGS_LIST});
+DiamondTrap::DiamondTrap(const std::string thename):
+ 	FragTrap(thename + "_clap_name"), 
+	ScavTrap(thename + "_clap_name"),
+	_name(thename)
+{
+	std::cout <<  YELLOW << "DiamTrap " << this->_name << " parametric constructor called." << RESET << std::endl;
+}
 
 // Getters
 
@@ -41,10 +51,27 @@ DiamondTrap::~DiamondTrap( void ) // destructor
 // Comparison operators
 
 // Canonicalization function
+void DiamondTrap::whoAmI() const
+{
+	std::cout << YELLOW << "DiamTrap's name is " << this->_name;
+	std::cout << " and ClapTrap's name is " << ClapTrap::getName() << "." << std::endl;
+}
 
+void DiamondTrap::attack (const std::string & target )
+{
+	std::cout << YELLOW << "DiamTrap attack using ScavTrap's attack " << RESET;
+	ScavTrap::attack(target);
+}
 
 
 // Helper functions for canonicalization
+std::string DiamondTrap::canonizeme( void ) const {
+	std::stringstream resultado;
+	resultado << this->_name << " [hit ==>(" << FragTrap::getHit();
+	resultado << ") energy ==>(" << ScavTrap::getEnergy();
+	resultado << ") attack ==>(" << FragTrap::getAttack() << ")]" << std::endl;
+	return (resultado.str());
+}
 
 std::ostream& operator<<(std::ostream& os, const DiamondTrap& obj)
 {

@@ -20,7 +20,7 @@ FragTrap::FragTrap(const FragTrap& other):ClapTrap() //constructor by copy
 
 FragTrap &  FragTrap::operator=(const FragTrap & other)
 {
-	std::cout <<  RED << "ScavTrap " << getName() << " copy assignment operator from "<< other.getName() <<" called." << RESET << std::endl;
+	std::cout <<  RED << "FragTrap " << getName() << " copy assignment operator from "<< other.getName() <<" called." << RESET << std::endl;
 	if (this != &other)
 	{
 		this->setName(other.getName());
@@ -33,7 +33,7 @@ FragTrap &  FragTrap::operator=(const FragTrap & other)
 
 FragTrap::~FragTrap( void ) // destructor
 {
-	std::cout <<  RED << "ScavTrap " << getName() << " Destructor called." << RESET << std::endl;
+	std::cout <<  RED << "FragTrap " << getName() << " Destructor called." << RESET << std::endl;
 	return ;
 }
 
@@ -43,7 +43,7 @@ FragTrap::FragTrap( const std::string thename):ClapTrap(thename) //constructor w
 	setHit(100);
 	setEnergy(100);
 	setAttack(30);
-	std::cout <<  RED << "ScavTrap " << getName() << " parametric constructor called." << RESET << std::endl;
+	std::cout <<  RED << "FragTrap " << getName() << " parametric constructor called." << RESET << std::endl;
 }
 
 

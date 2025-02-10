@@ -3,7 +3,7 @@
 #include "ClapTrap.class.hpp"
 #include <iostream>
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 public:
     ScavTrap( void ); //constructor by default
     ScavTrap(const ScavTrap& other); //constructor by copy

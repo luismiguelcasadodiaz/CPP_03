@@ -17,7 +17,7 @@ public:
     ClapTrap( void ); //constructor by default
     ClapTrap(const ClapTrap& other); //constructor by copy
     ClapTrap & operator=(const ClapTrap & other);
-    ~ClapTrap( void ); // destructor
+    virtual ~ClapTrap( void ); // destructor
 
     // Constructor(s)
     ClapTrap( const std::string thename );
@@ -44,6 +44,7 @@ public:
 	std::string canonizeme( void ) const ;
 
 private:
+
 	std::string	_name;
 	int	_hit;
 	int _energy;

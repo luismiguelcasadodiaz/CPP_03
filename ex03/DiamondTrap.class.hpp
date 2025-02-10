@@ -10,8 +10,12 @@
 # define BLUE		"\033[0;94m"
 
 #include <iostream>
+#include <string>
+#include <sstream>
+#include "FragTrap.class.hpp"
+#include "ScavTrap.class.hpp"
 
-class DiamondTrap {
+class DiamondTrap: public FragTrap, public ScavTrap {
 public:
     DiamondTrap( void ); //constructor by default
     DiamondTrap(const DiamondTrap& other); //constructor by copy
@@ -19,7 +23,7 @@ public:
     ~DiamondTrap( void ); // destructor
 
     // Constructor(s)
-    //DiamondTrap(${ARGS_LIST});
+    DiamondTrap(const std::string thename);
 
     // Getters
 
@@ -28,11 +32,16 @@ public:
     // Comparison operators
 
     // member functions
+    void whoAmI() const;
+    void attack (const std::string & target );
+
+    // Helper functions for canonicalization
+    std::string canonizeme( void ) const ;
 
 
 private:
-
-    // Helper functions for canonicalization
+    std::string _name;
+    
 };
 
 std::ostream& operator<<(std::ostream& os, const DiamondTrap& obj);

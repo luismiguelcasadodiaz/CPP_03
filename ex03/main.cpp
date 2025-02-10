@@ -13,104 +13,114 @@
 #include "ClapTrap.class.hpp"
 #include "ScavTrap.class.hpp"
 #include "FragTrap.class.hpp"
+#include "DiamondTrap.class.hpp"
+
 int main( void )
 {
 
-	{std::cout << "----Pruebas ClapTrap prints print different messages" << std::endl;
-	ClapTrap a;
-	std::cout << a << std::endl;
-	a.attack("Juan");
-	std::cout << a << std::endl;	
-	a.takeDamage(1);
-	std::cout << a << std::endl;
-	a.takeDamage(1);
-	std::cout << a << std::endl;	
-	a.takeDamage(1);
-	std::cout << a << std::endl;	
-	a.takeDamage(1);
-	std::cout << a << std::endl;
-	a.takeDamage(1);
-	std::cout << a << std::endl;	
-	a.takeDamage(1);
-	std::cout << a << std::endl;	
-	a.takeDamage(1);
-	std::cout << a << std::endl;	
-	a.takeDamage(1);
-	std::cout << a << std::endl;
-	a.takeDamage(1);
-	std::cout << a << std::endl;
-	a.takeDamage(1);
-	std::cout << a << std::endl;
-	a.takeDamage(1);
-	a.attack("Pepe");
-	std::cout << a << std::endl;					
-	a.beRepaired(321);
-	std::cout << a << std::endl;
+	// {std::cout << "----Pruebas ClapTrap prints print different messages" << std::endl;
+	// ClapTrap a;
+	// std::cout << a << std::endl;
+	// a.attack("Juan");
+	// std::cout << a << std::endl;	
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;
+	// a.takeDamage(1);
+	// std::cout << a << std::endl;
+	// a.takeDamage(1);
+	// a.attack("Pepe");
+	// std::cout << a << std::endl;					
+	// a.beRepaired(321);
+	// std::cout << a << std::endl;
 
-	a = ClapTrap("DELL");
-	std::cout << a << std::endl;	
-	}
-	{
+	// a = ClapTrap("DELL");
+	// std::cout << a << std::endl;	
+	// }
+	// {
 
-	std::cout << "----Pruebas ScavTrap prints print different messages" << std::endl;
-	ClapTrap ct= ClapTrap("Pepe");
-	std::cout << ct << std::endl;
-	ScavTrap st= ScavTrap("Luis");
-	std::cout << st << std::endl;
-	ct.attack("to one");
-	st.attack("to two");
-	std::cout << ct << std::endl;
-	std::cout << st << std::endl;
-	ct.takeDamage(1);
-	st.takeDamage(1);
-	std::cout << ct << std::endl;
-	std::cout << st << std::endl;
-	ct.beRepaired(1);
-	st.beRepaired(1);
-	std::cout << ct << std::endl;
-	std::cout << st << std::endl;
-	st.guardGate();
-	}
-	{
-	std::cout << "----Pruebas FragTrap prints print different messages" << std::endl;
-	FragTrap a = FragTrap("DELL");
-	std::cout << a << std::endl;
-	a.attack("Juan");
-	std::cout << a << std::endl;	
-	a.takeDamage(10);
-	std::cout << a << std::endl;
-	a.takeDamage(10);
-	std::cout << a << std::endl;	
-	a.takeDamage(10);
-	std::cout << a << std::endl;	
-	a.takeDamage(10);
-	std::cout << a << std::endl;
-	a.takeDamage(10);
-	std::cout << a << std::endl;	
-	a.takeDamage(10);
-	std::cout << a << std::endl;	
-	a.takeDamage(10);
-	std::cout << a << std::endl;	
-	a.takeDamage(10);
-	std::cout << a << std::endl;
-	a.takeDamage(10);
-	std::cout << a << std::endl;
-	a.takeDamage(10);
-	std::cout << a << std::endl;
-	a.takeDamage(1);
-	a.attack("Pepe");
-	std::cout << a << std::endl;					
-	a.beRepaired(321);
-	std::cout << a << std::endl;
+	// std::cout << "----Pruebas ScavTrap prints print different messages" << std::endl;
+	// ClapTrap ct= ClapTrap("Pepe");
+	// std::cout << ct << std::endl;
+	// ScavTrap st= ScavTrap("Luis");
+	// std::cout << st << std::endl;
+	// ct.attack("to one");
+	// st.attack("to two");
+	// std::cout << ct << std::endl;
+	// std::cout << st << std::endl;
+	// ct.takeDamage(1);
+	// st.takeDamage(1);
+	// std::cout << ct << std::endl;
+	// std::cout << st << std::endl;
+	// ct.beRepaired(1);
+	// st.beRepaired(1);
+	// std::cout << ct << std::endl;
+	// std::cout << st << std::endl;
+	// st.guardGate();
+	// }
+	// {
+	// std::cout << "----Pruebas FragTrap prints print different messages" << std::endl;
+	// FragTrap a = FragTrap("DELL");
+	// std::cout << a << std::endl;
+	// a.attack("Juan");
+	// std::cout << a << std::endl;	
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;	
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;
+	// a.takeDamage(10);
+	// std::cout << a << std::endl;
+	// a.takeDamage(1);
+	// a.attack("Pepe");
+	// std::cout << a << std::endl;					
+	// a.beRepaired(321);
+	// std::cout << a << std::endl;
 
-	a.highFivesGuys();	
+	// a.highFivesGuys();	
 	
-	ClapTrap ct= ClapTrap("Luis");
-	std::cout << ct << std::endl;
-	FragTrap ft= FragTrap("Paco");
-	std::cout << ft << std::endl;
-	ct.attack("to one");
-	ft.attack("to two");
+	// ClapTrap ct= ClapTrap("Luis");
+	// std::cout << ct << std::endl;
+	// FragTrap ft= FragTrap("Paco");
+	// std::cout << ft << std::endl;
+	// ct.attack("to one");
+	// ft.attack("to two");
+	// }
+
+
+	{
+	DiamondTrap dt=DiamondTrap("Luis Miguel");
+	dt.whoAmI();
+	std::cout <<dt << std::endl;
+	dt.attack("to three");
 	}
 	return (0);
 }

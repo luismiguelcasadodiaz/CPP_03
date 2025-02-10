@@ -3,7 +3,7 @@
 #include "ClapTrap.class.hpp"
 #include <iostream>
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 public:
     FragTrap( void ); //constructor by default
     FragTrap(const FragTrap& other); //constructor by copy

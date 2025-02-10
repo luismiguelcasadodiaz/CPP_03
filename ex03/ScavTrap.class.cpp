@@ -11,7 +11,7 @@
 		return ;
 	}
 
-	ScavTrap::ScavTrap(const ScavTrap& other):ClapTrap() //constructor by copy
+	ScavTrap::ScavTrap(const ScavTrap& other):ClapTrap(other) //constructor by copy
 	{
 		std::cout << BLUE << "ScavTrap " << getName() << " copy constructor from "<< other.getName() <<" called." << RESET << std::endl;
 		setName(other.getName());
