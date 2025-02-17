@@ -17,7 +17,7 @@
 
 class DiamondTrap: public FragTrap, public ScavTrap {
 public:
-    DiamondTrap( void ); //constructor by default
+
     DiamondTrap(const DiamondTrap& other); //constructor by copy
     DiamondTrap & operator=(const DiamondTrap & other);
     ~DiamondTrap( void ); // destructor
@@ -41,6 +41,7 @@ public:
 
 private:
     std::string _name;
+    DiamondTrap( void ); //constructor by default
     
 };
 

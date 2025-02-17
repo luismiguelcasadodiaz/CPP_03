@@ -1,0 +1,19 @@
+tests  main.cpp ClapTrap.class.cpp ScavTrap.class.cpp FragTrap.class.cpp DiamondTrap.class.cpp
+object  ./obj/main.o ./obj/ClapTrap.class.o ./obj/ScavTrap.class.o ./obj/FragTrap.class.o ./obj/DiamondTrap.class.o
+patha ./obj/main.d ./obj/ClapTrap.class.d ./obj/ScavTrap.class.d ./obj/FragTrap.class.d ./obj/DiamondTrap.class.d
+rm -f main
+rm -rf ./obj/
+rm -f main
+rm -rf ./obj/
+[0;92m========== COMPILING main FILES ===============[0;39m
+c++ -std=c++98 -g3  -pg -Wall -Wextra -Werror -Wconversion -Wdouble-promotion -fsanitize=address -c  main.cpp -o obj/main.o   
+[0;92m========== COMPILING main FILES ===============[0;39m
+c++ -std=c++98 -g3  -pg -Wall -Wextra -Werror -Wconversion -Wdouble-promotion -fsanitize=address -c  ClapTrap.class.cpp -o obj/ClapTrap.class.o   
+[0;92m========== COMPILING main FILES ===============[0;39m
+c++ -std=c++98 -g3  -pg -Wall -Wextra -Werror -Wconversion -Wdouble-promotion -fsanitize=address -c  ScavTrap.class.cpp -o obj/ScavTrap.class.o   
+[0;92m========== COMPILING main FILES ===============[0;39m
+c++ -std=c++98 -g3  -pg -Wall -Wextra -Werror -Wconversion -Wdouble-promotion -fsanitize=address -c  FragTrap.class.cpp -o obj/FragTrap.class.o   
+[0;92m========== COMPILING main FILES ===============[0;39m
+c++ -std=c++98 -g3  -pg -Wall -Wextra -Werror -Wconversion -Wdouble-promotion -fsanitize=address -c  DiamondTrap.class.cpp -o obj/DiamondTrap.class.o   
+[0;92m========== GATHERING main OBJECTS =============[0;39m
+c++ -std=c++98 -fsanitize=address ./obj/main.o ./obj/ClapTrap.class.o ./obj/ScavTrap.class.o ./obj/FragTrap.class.o ./obj/DiamondTrap.class.o -o main  

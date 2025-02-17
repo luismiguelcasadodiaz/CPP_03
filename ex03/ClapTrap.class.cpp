@@ -10,7 +10,7 @@ ClapTrap::ClapTrap( void )://constructor by default
 	std::cout << GREEN << "ClapTrap " << this->_name << " default constructor called." << RESET << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other) //constructor by copy
+ClapTrap::ClapTrap(const ClapTrap &other) //constructor by copy
 {
 	std::cout <<  GREEN << "ClapTrap " << this->_name << " copy constructor from "<< other._name <<" called." << RESET << std::endl;
 	this->_name = other._name;
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap& other) //constructor by copy
 	return;
 }
 
-ClapTrap &  ClapTrap::operator=(const ClapTrap & other)
+ClapTrap &  ClapTrap::operator=(const ClapTrap &other)
 {
 	std::cout <<  GREEN << "ClapTrap " << this->_name << " copy assignment operator from "<< other._name <<" called." << RESET << std::endl;
 	if (this != &other)
@@ -39,11 +39,22 @@ ClapTrap::~ClapTrap( void ) // destructor
 }
 
 // Constructor(s)
-ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
+ClapTrap::ClapTrap( const std::string &thename,
+            const int hit,
+            const int energy,
+            const int attack): //constructor with parameters
+	_name(thename),
+	_hit(hit),
+	_energy(energy),
+	_attack(attack) {
+	std::cout <<  GREEN << "ClapTrap " << this->_name << " parametric constructor called." << RESET << std::endl;
+}
+ClapTrap::ClapTrap( const std::string &thename): //constructor with parameters
 	_name(thename),
 	_hit(10),
 	_energy(10),
-	_attack(0) {
+	_attack(0){
+
 	std::cout <<  GREEN << "ClapTrap " << this->_name << " parametric constructor called." << RESET << std::endl;
 }
 	
@@ -62,7 +73,7 @@ ClapTrap::ClapTrap( const std::string thename): //constructor with parameters
 		return (this->_attack);
 	}    
     // Setters
-    void ClapTrap::setName(std::string const value){
+    void ClapTrap::setName(const std::string &value){
 		this->_name = value;
 	}
     void ClapTrap::setHit(int const value){

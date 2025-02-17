@@ -117,10 +117,42 @@ int main( void )
 
 
 	{
+	std::cout << "---------------------------- Entorno 1 ------------------------------ " << std::endl;
+	ClapTrap ct=ClapTrap("Clap Trap Alfonso");
+	ClapTrap ct2;
+	std::cout <<ct << std::endl;
+	ct.attack("Luis");	
+	ct2 = ct;
+	std::cout <<ct2 << std::endl;
+	}
+	{
+	std::cout << "---------------------------- Entorno 2 ------------------------------ " << std::endl;
+	FragTrap ft=FragTrap("Frag Trap Alfonso");
+	FragTrap ft2;
+	std::cout <<ft << std::endl;
+	ft.attack("Luis");	
+	ft2 = ft;
+	std::cout <<ft2 << std::endl;
+	}
+	{
+	std::cout << "---------------------------- Entorno 3 ------------------------------ " << std::endl;
+	ScavTrap st=ScavTrap("Scav Trap Alfonso");
+	ScavTrap st2;
+	std::cout <<st << std::endl;
+	st.attack("Luis");
+	st2 = st;	
+	std::cout <<st2 << std::endl;
+	}
+	{
+	std::cout << "---------------------------- Entorno 4 ------------------------------ " << std::endl;
 	DiamondTrap dt=DiamondTrap("Luis Miguel");
-	dt.whoAmI();
+	DiamondTrap dt2=DiamondTrap("Alfonso");
 	std::cout <<dt << std::endl;
+	std::cout <<dt2 << std::endl;
 	dt.attack("to three");
+	dt.whoAmI();
+	dt2 = dt;
+	std::cout <<dt2 << std::endl;
 	}
 	return (0);
 }

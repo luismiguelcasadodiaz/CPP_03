@@ -3,16 +3,20 @@
 
 
 DiamondTrap::DiamondTrap( void ): //constructor by default
-	ClapTrap("Anonymous_Clap_name"),
- 	FragTrap("Anonymous_Frag_name"), 
-	ScavTrap("Anonymous_Scav_name"),
+	// ClapTrap("Anonymous_Clap_name"),
+ 	// FragTrap("Anonymous_Frag_name"),
+	// ScavTrap("Anonymous_Scav_name"), 
+	ClapTrap(),FragTrap(), ScavTrap(),
 	_name("Anonymous")
 {
 	std::cout << YELLOW << "DiamTrap " << this->_name << " default constructor called." << RESET << std::endl;
 }
 
 
-DiamondTrap::DiamondTrap(const DiamondTrap& other) //constructor by copy
+DiamondTrap::DiamondTrap(const DiamondTrap& other): //constructor by copy
+	ClapTrap(other._name + "_Clap_name"),
+	FragTrap(other._name + "_Frag_name"),
+	ScavTrap(other._name + "_Scav_name") 
 {
 	std::cout <<  YELLOW << "DiamTrap " << this->_name << " copy constructor from "<< other._name <<" called." << RESET << std::endl;
 	this->_name = other._name;
@@ -22,10 +26,13 @@ DiamondTrap::DiamondTrap(const DiamondTrap& other) //constructor by copy
 DiamondTrap &  DiamondTrap::operator=(const DiamondTrap & other)
 {
 std::cout <<  YELLOW << "DiamTrap " << this->_name << " copy assignment operator from "<< other._name <<" called." << RESET << std::endl;
-	if (this != &other)	
+
 	if (this != &other)
 	{
-		*this = other;
+		this->_name = other._name + " Copiado ";
+		this->setAttack(other.getAttack() + 1);
+		this->setEnergy(ScavTrap::getEnergy() + 1);
+		this->setHit(other.getHit() + 1);
 	}
 	return *this; 
 }
@@ -37,8 +44,9 @@ DiamondTrap::~DiamondTrap( void ) // destructor
 
 // Constructor(s)
 DiamondTrap::DiamondTrap(const std::string thename):
- 	FragTrap(thename + "_clap_name"), 
-	ScavTrap(thename + "_clap_name"),
+	ClapTrap(thename + "_Clap_name"),
+	FragTrap(thename + "_Frag_name"), 
+	ScavTrap(thename + "_Scav_name"),
 	_name(thename)
 {
 	std::cout <<  YELLOW << "DiamTrap " << this->_name << " parametric constructor called." << RESET << std::endl;

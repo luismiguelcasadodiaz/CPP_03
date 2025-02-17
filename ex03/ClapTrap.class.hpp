@@ -15,12 +15,16 @@
 class ClapTrap {
 public:
     ClapTrap( void ); //constructor by default
-    ClapTrap(const ClapTrap& other); //constructor by copy
-    ClapTrap & operator=(const ClapTrap & other);
+    ClapTrap(const ClapTrap &other); //constructor by copy
+    ClapTrap & operator=(const ClapTrap &other);
     virtual ~ClapTrap( void ); // destructor
 
     // Constructor(s)
-    ClapTrap( const std::string thename );
+    ClapTrap( const std::string &thename,
+            const int,
+            const int,
+            const int);
+    ClapTrap( const std::string &thename);
 
     // Getters
     std::string getName( void ) const;
@@ -28,7 +32,7 @@ public:
     int getEnergy( void ) const;
     int getAttack( void ) const;    
     // Setters
-    void setName(std::string const value);
+    void setName(const std::string &value);
     void setHit(int const value);
     void setEnergy(int const value);
     void setAttack(int const value);            

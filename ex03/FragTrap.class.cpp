@@ -38,11 +38,11 @@ FragTrap::~FragTrap( void ) // destructor
 }
 
 // Constructor(s)
-FragTrap::FragTrap( const std::string thename):ClapTrap(thename) //constructor with parameters
+FragTrap::FragTrap( const std::string thename):ClapTrap(thename, 100, 100, 30) //constructor with parameters
 {
-	setHit(100);
-	setEnergy(100);
-	setAttack(30);
+	// setHit(100);
+	// setEnergy(100);
+	// setAttack(30);
 	std::cout <<  RED << "FragTrap " << getName() << " parametric constructor called." << RESET << std::endl;
 }
 

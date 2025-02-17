@@ -35,3 +35,22 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 
 While virtual inheritance resolves the ambiguity, it can introduce some complexity and potential overhead.  
 
+### The order **maters**
+
+Declaring the inheritance in one order or other changes DiamondTrap behaviour.
+
+```c++
+class DiamondTrap: public ScavTrap, public FragTrap {} //option 1
+class DiamondTrap: public FragTrap, public ScavTrap {} //option 2
+```
+
+Either FragTrap or ScapTrap use ClapTrap attributes, so the last one keeps its attributes correctly and overwrites former's attributes.
+
+You can see it, when you try to define Diamond attributes according to subject rules
+
+•Hit points (FragTrap)
+•Energy points (ScavTrap)
+•Attack damage (FragTrap)
+
+DiamTrap Luis Miguel [hit ==>(100) energy ==>(100) attack ==>(30)] //Option 1
+DiamTrap Luis Miguel [hit ==>(100) energy ==>(50) attack ==>(20)] //Option 2

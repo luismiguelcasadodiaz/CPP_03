@@ -40,11 +40,11 @@ ScavTrap::~ScavTrap( void ) // destructor
 }
 
 // Constructor(s)
-ScavTrap::ScavTrap( const std::string thename):ClapTrap(thename) //constructor with parameters
+ScavTrap::ScavTrap( const std::string thename):ClapTrap(thename, 100, 50, 20) //constructor with parameters
 {
-	setHit(100);
-	setEnergy(50);
-	setAttack(20);
+	//setHit(100);
+	//setEnergy(50);
+	//setAttack(20);
 	std::cout <<  BLUE << "ScavTrap " << getName() << " parametric constructor called." << RESET << std::endl;
 }
 
